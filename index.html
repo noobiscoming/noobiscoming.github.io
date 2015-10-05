@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>hi</title>
+	<title>Noob</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body onload="time()">
 
-<script>
-function pad(n, width, z) {
-  z = z || '0';
-  n = n + '';
-  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
-}
-</script>
+<div id="title">noob is coming</div>
+<div id="holder">
+	<div id="one">
+		<div class="times" id="days">00</div>
+		<div class="label" id="d">DAYS</div>
+	</div>
+		<div id="two">
+		<div class="times" id="hours">00</div>
+		<div class="label" id="h">HOURS</div>
+	</div>
+	<div id="three">
+		<div class="times" id="mins">00</div>
+		<div class="label" id="m">MINUTES</div>
+	</div>
+	<div id="four">
+		<div class="times" id="secs">00</div>
+		<div class="label" id="s">SECONDS</div>
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 
-<div id="title">
-Noob is coming.
-</div>
-<div id="days">
-</div>
-<div id="hours">
-</div>
-<div id="mins">
-</div>
-<div id="secs">
-</div>
 
 <script>
 function time() {
 	today = new Date ();
-	BigDay = new Date ("Tue Oct 06 2015 18:39:28 GMT+1000 (AEST)");
+	BigDay = new Date ("Sat Oct 17 2015 00:00:00 GMT+1000 (AEST)");
 	msPerDay = 24 * 60 * 60 * 1000;
 	timeLeft = (BigDay.getTime() - today.getTime());
 	e_daysLeft = timeLeft / msPerDay;
@@ -44,6 +47,13 @@ function time() {
 	document.getElementById('mins').innerHTML = pad(minsLeft,2);
 	document.getElementById('secs').innerHTML = pad(secsLeft,2);
 	setInterval(function(){ time(); }, 1000);
+}
+</script>
+<script>
+function pad(n, width, z) {
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 </script>
 
