@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hi</title>
+</head>
+<body onload="time()">
+
+<script>
+function pad(n, width, z) {
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+</script>
+
+<div id="title">
+Noob is coming.
+</div>
+<div id="days">
+</div>
+<div id="hours">
+</div>
+<div id="mins">
+</div>
+<div id="secs">
+</div>
+
+<script>
+function time() {
+	today = new Date ();
+	BigDay = new Date ("Tue Oct 06 2015 18:39:28 GMT+1000 (AEST)");
+	msPerDay = 24 * 60 * 60 * 1000;
+	timeLeft = (BigDay.getTime() - today.getTime());
+	e_daysLeft = timeLeft / msPerDay;
+	daysLeft = Math.floor(e_daysLeft);
+	e_hrsLeft = (e_daysLeft - daysLeft) * 24;
+	hrsLeft = Math.floor(e_hrsLeft);
+	e_minsLeft = (e_hrsLeft - hrsLeft) * 60;
+	minsLeft = Math.floor(e_minsLeft);
+	e_secsLeft = (e_minsLeft - minsLeft) * 60;
+	secsLeft = Math.floor(e_secsLeft);
+	document.getElementById('days').innerHTML = pad(daysLeft,2);
+	document.getElementById('hours').innerHTML = pad(hrsLeft,2);
+	document.getElementById('mins').innerHTML = pad(minsLeft,2);
+	document.getElementById('secs').innerHTML = pad(secsLeft,2);
+	setInterval(function(){ time(); }, 1000);
+}
+</script>
+
+</body>
+</html>
