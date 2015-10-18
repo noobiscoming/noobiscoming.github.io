@@ -3,11 +3,9 @@
 
 }
 a {
+	color: #ecf0f1;
 	font-size: 2em;
 	font-family: 'Open Sans', sans-serif;
-	text-align: center;
-	 color: #bdc3c7;
-	 text-decoration: none;
 }
 #title {
 	font-size: 5em;
@@ -30,6 +28,7 @@ a {
     text-align: center;
     color: #bdc3c7;
 }
+
 @font-face {
     font-family: 'gobold';
     src: url(/G.tff);
